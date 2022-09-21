@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title></title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <form method="POST" action="/update/{{user.id}}">
+                {% csrf_token %}
+                <div class="form group">
+                <label><b> User name:</b></label>
+                <input type="text" name="uname" class="form-control" value="{{user.uname}}">
+            </div>
+
+            <div class="form group">
+                <label><b> User email:</b></label>
+                <input type="text" name="uemail" class="form-control" value="{{user.uemail}}">
+            </div>
+
+            <div class="form group">
+                <label><b> User password:</b></label>
+                <input type="text" name="upassword" class="form-control" value="{{user.upassword}}">
+            </div>
+            <input type="submit" name="update" value="update" class="btn btn-success">
+         
+            </form>
+        </div>
+
+    </body>
+</html>
